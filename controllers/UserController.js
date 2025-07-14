@@ -69,10 +69,13 @@ class UserController {
     try {
       const { userId } = req.params;
       
-      const wallets = await Wallet.findAll({
-        where: { user_id: userId },
-        include: [{ model: Cryptocurrency }]
-      });
+    const wallets = await Wallet.findAll({
+      where: { user_id: userId },
+      include: [{
+        model: Cryptocurrency,
+        attributes: ['crypto_id', 'symbol', 'name']
+      }]
+    });
       
       res.json({ success: true, wallets });
     } catch (error) {

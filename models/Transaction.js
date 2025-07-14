@@ -58,10 +58,5 @@ Transaction.prototype.getOrder = async function() {
   return await Order.findByPk(this.order_id);
 };
 
-Transaction.associate = (models) => {
-  Transaction.belongsTo(models.Wallet, { foreignKey: 'from_wallet_id', as: 'fromWallet' });
-  Transaction.belongsTo(models.Wallet, { foreignKey: 'to_wallet_id', as: 'toWallet' });
-  Transaction.belongsTo(models.Order, { foreignKey: 'order_id' });
-};
 
 module.exports = Transaction;

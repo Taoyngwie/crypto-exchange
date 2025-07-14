@@ -62,11 +62,5 @@ Order.prototype.getTransaction = async function() {
   return await Transaction.findOne({ where: { order_id: this.order_id } });
 };
 
-Order.associate = (models) => {
-  Order.belongsTo(models.User, { foreignKey: 'user_id' });
-  Order.belongsTo(models.Cryptocurrency, { foreignKey: 'crypto_id' });
-  Order.belongsTo(models.FiatCurrency, { foreignKey: 'fiat_id' });
-  Order.hasOne(models.Transaction, { foreignKey: 'order_id' });
-};
 
 module.exports = Order;

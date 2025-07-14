@@ -56,10 +56,5 @@ P2POffer.prototype.getCryptocurrency = async function() {
   return await Cryptocurrency.findByPk(this.crypto_id);
 };
 
-P2POffer.associate = (models) => {
-  P2POffer.belongsTo(models.User, { foreignKey: 'seller_id', as: 'seller' });
-  P2POffer.belongsTo(models.Cryptocurrency, { foreignKey: 'crypto_id' });
-  P2POffer.belongsTo(models.FiatCurrency, { foreignKey: 'fiat_id' });
-};
 
 module.exports = P2POffer;

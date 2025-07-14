@@ -53,11 +53,6 @@ Wallet.prototype.getTransactions = async function() {
   });
 };
 
-Wallet.associate = (models) => {
-  Wallet.belongsTo(models.User, { foreignKey: 'user_id' });
-  Wallet.belongsTo(models.Cryptocurrency, { foreignKey: 'crypto_id' });
-  Wallet.hasMany(models.Transaction, { foreignKey: 'from_wallet_id', as: 'sentTransactions' });
-  Wallet.hasMany(models.Transaction, { foreignKey: 'to_wallet_id', as: 'receivedTransactions' });
-};
+
 
 module.exports = Wallet;

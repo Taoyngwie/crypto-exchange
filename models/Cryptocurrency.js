@@ -34,9 +34,6 @@ Cryptocurrency.prototype.getWallets = async function() {
   });
 };
 
-Cryptocurrency.associate = (models) => {
-  Cryptocurrency.hasMany(models.Wallet, { foreignKey: 'crypto_id' });
-  Cryptocurrency.hasMany(models.Order, { foreignKey: 'crypto_id' });
-};
+
 
 module.exports = Cryptocurrency;
