@@ -44,7 +44,7 @@ The system uses the following entities:
 - **ORM**: Sequelize
 - **Authentication**: bcrypt for password hashing
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -182,7 +182,7 @@ curl -X POST http://localhost:3000/api/transactions/internal \
   }'
 ```
 
-## 🧪 Test Data
+## Test Data
 
 The seed script creates the following test data:
 
